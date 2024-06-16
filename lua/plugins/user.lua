@@ -1,13 +1,8 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
 
 ---@type LazySpec
 return {
-
-  -- == Examples of Adding Plugins ==
-
   "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
@@ -80,6 +75,31 @@ return {
         -- disable for .vim files, but it work for another filetypes
         Rule("a", "a", "-vim")
       )
+    end,
+  },
+  {
+    "sainnhe/gruvbox-material",
+    priority = 1000,
+  },
+  {
+    "LintaoAmons/bookmarks.nvim",
+    event = "BufRead",
+    dependencies = {
+      { "stevearc/dressing.nvim" }, -- optional: to have the same UI shown in the GIF
+    },
+  },
+  {
+    "dstein64/nvim-scrollview",
+    event = "BufRead",
+    config = function()
+      require("scrollview").setup {
+        excluded_filetypes = { "neo-tree" },
+        winblend = 30,
+        -- base = 'buffer',
+        column = 1,
+        signs_on_startup = { "all" },
+        -- diagnostics_severities = { vim.diagnostic.severity.ERROR }
+      }
     end,
   },
 }
