@@ -22,11 +22,12 @@ return {
   { import = "astrocommunity.scrolling.neoscroll-nvim" },
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.editing-support.chatgpt-nvim" },
-  { import = "astrocommunity.completion.codeium-vim" },
+  -- { import = "astrocommunity.completion.codeium-vim" },
   { import = "astrocommunity.editing-support.treesj" },
   { import = "astrocommunity.bars-and-lines.scope-nvim" },
   { import = "astrocommunity.markdown-and-latex.glow-nvim" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
+  { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
 
   -- import/override with your plugins folder
 }
