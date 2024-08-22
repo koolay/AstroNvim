@@ -32,6 +32,8 @@ return {
         return {
           TelescopeBorder = { fg = bg_alt, bg = bg },
           TelescopeNormal = { bg = bg },
+          TelescopeMatching = { fg = "#ffbba6" },
+          TelescopePreviewMatch = { fg = "#ffbba6" },
           TelescopePreviewBorder = { fg = bg, bg = bg },
           TelescopePreviewNormal = { bg = bg },
           TelescopePreviewTitle = { fg = bg, bg = green },
