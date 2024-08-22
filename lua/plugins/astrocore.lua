@@ -69,6 +69,10 @@ return {
           end,
           desc = "Close buffer from tabline",
         },
+        ["<Leader>gdf"] = { "<cmd>DiffviewOpen<cr>", desc = "Diffview open" },
+        ["<Leader>gdh"] = { "<cmd>DiffviewFileHistory %<cr>", desc = "Diff current file" },
+        ["<Leader>gdp"] = { "<cmd>DiffviewFileHistory<cr>", desc = "Diff current branch" },
+        ["<Leader>gc"] = { "<cmd>DiffviewClose<cr>", desc = "Diffview close" },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
