@@ -11,6 +11,7 @@ return {
   { import = "astrocommunity.utility.telescope-live-grep-args-nvim" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.helm" },
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.motion.flash-nvim" },
