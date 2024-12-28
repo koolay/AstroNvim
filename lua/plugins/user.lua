@@ -1,8 +1,13 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
 
 ---@type LazySpec
 return {
+
+  -- == Examples of Adding Plugins ==
+
   "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
@@ -76,40 +81,5 @@ return {
         Rule("a", "a", "-vim")
       )
     end,
-  },
-  {
-    "sainnhe/gruvbox-material",
-    priority = 1000,
-  },
-  {
-    "LintaoAmons/bookmarks.nvim",
-    event = "BufRead",
-    dependencies = {
-      { "stevearc/dressing.nvim" }, -- optional: to have the same UI shown in the GIF
-    },
-  },
-  {
-    "dstein64/nvim-scrollview",
-    event = "BufRead",
-    config = function()
-      require("scrollview").setup {
-        excluded_filetypes = { "neo-tree" },
-        winblend = 30,
-        -- base = 'buffer',
-        column = 1,
-        signs_on_startup = { "all" },
-        -- diagnostics_severities = { vim.diagnostic.severity.ERROR }
-      }
-    end,
-  },
-  {
-    "linux-cultist/venv-selector.nvim",
-    opts = {},
-    keys = {
-      -- Keymap to open VenvSelector to pick a venv.
-      { "<leader>vs", "<cmd>VenvSelect<cr>" },
-      -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
-      { "<leader>vc", "<cmd>VenvSelectCached<cr>" },
-    },
   },
 }

@@ -1,10 +1,11 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
 ---@type LazySpec
-
 return {
   "AstroNvim/astrocore",
   ---@type AstroCoreOpts
@@ -31,14 +32,8 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
-        swapfile = false,
-        guifont = "FiraCode Nerd Font",
       },
       g = { -- vim.g.<key>
-        icons_enabled = true,
-        diagnostics_mode = 3,
-        autopairs_enabled = true,
-        cmp_enabled = true,
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
@@ -54,12 +49,7 @@ return {
         -- navigate buffer tabs
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
-        ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Toggle Projects Picker" },
-        ["<C-p>"] = { "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-        ["<C-w>"] = {
-          function() require("telescope").extensions.live_grep_args.live_grep_args() end,
-          desc = "live grep (args)",
-        },
+
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
           function()
@@ -69,10 +59,6 @@ return {
           end,
           desc = "Close buffer from tabline",
         },
-        ["<Leader>gdf"] = { "<cmd>DiffviewOpen<cr>", desc = "Diffview open" },
-        ["<Leader>gdh"] = { "<cmd>DiffviewFileHistory %<cr>", desc = "Diff current file" },
-        ["<Leader>gdp"] = { "<cmd>DiffviewFileHistory<cr>", desc = "Diff current branch" },
-        ["<Leader>gc"] = { "<cmd>DiffviewClose<cr>", desc = "Diffview close" },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
