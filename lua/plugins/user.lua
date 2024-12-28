@@ -3,6 +3,7 @@
 
 ---@type LazySpec
 return {
+  "kkharji/sqlite.lua",
   "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
