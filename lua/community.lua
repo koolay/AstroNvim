@@ -11,6 +11,7 @@ return {
   { import = "astrocommunity.utility.telescope-live-grep-args-nvim" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.helm" },
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.git.diffview-nvim" },
   { import = "astrocommunity.motion.flash-nvim" },
@@ -28,6 +29,23 @@ return {
   { import = "astrocommunity.markdown-and-latex.glow-nvim" },
   { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
+  {
+    "Exafunction/codeium.vim",
+    event = "InsertEnter",
+    config = function()
+      vim.keymap.set("i", "<C-g>", function() return vim.fn["codeium#Accept"]() end, { expr = true })
+      vim.keymap.set("i", "<c-.>", function() return vim.fn["codeium#CycleCompletions"](1) end, { expr = true })
+      vim.keymap.set("i", "<c-,>", function() return vim.fn["codeium#CycleCompletions"](-1) end, { expr = true })
+      vim.keymap.set("i", "<c-x>", function() return vim.fn["codeium#Clear"]() end, { expr = true })
+      vim.keymap.set("n", "<leader>;", function()
+        if vim.g.codeium_enabled == true then
+          vim.cmd "CodeiumDisable"
+        else
+          vim.cmd "CodeiumEnable"
+        end
+      end, { noremap = true, desc = "Toggle Codeium active" })
+    end,
+  },
 
   -- import/override with your plugins folder
 }
