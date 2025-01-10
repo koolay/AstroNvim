@@ -3,6 +3,7 @@
 
 ---@type LazySpec
 return {
+  "kkharji/sqlite.lua",
   "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
@@ -101,5 +102,15 @@ return {
         -- diagnostics_severities = { vim.diagnostic.severity.ERROR }
       }
     end,
+  },
+  {
+    "linux-cultist/venv-selector.nvim",
+    opts = {},
+    keys = {
+      -- Keymap to open VenvSelector to pick a venv.
+      { "<leader>vs", "<cmd>VenvSelect<cr>" },
+      -- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
+      { "<leader>vc", "<cmd>VenvSelectCached<cr>" },
+    },
   },
 }
