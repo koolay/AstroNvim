@@ -105,6 +105,8 @@ return {
   },
   {
     "linux-cultist/venv-selector.nvim",
+    event = "VeryLazy",
+    enabled = true,
     opts = {},
     keys = {
       -- Keymap to open VenvSelector to pick a venv.
